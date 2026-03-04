@@ -38,11 +38,11 @@ def fetch_location_data(geo, location_name: str):
         return None
 
 
-def build_geo_dataframe(geo, locations):
+def build_geo_dataframe(geolocator, locations):
     """
     Build a pandas DataFrame from a list of location names.
     """
-    geo_data = []
+    geo_data = [fetch_location_data(geolocator, loc) for loc in locations]
 
     for loc in locations:
         data = fetch_location_data(geo, loc)
