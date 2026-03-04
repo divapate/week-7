@@ -63,7 +63,7 @@ if __name__ == "__main__":
         "Burj Khalifa",
     ]
 
-    df = build_geo_dataframe(geolocator_instance, locations)
+    df = build_geo_dataframe(geo, locations)
 
     df.to_csv("./geo_data.csv", index=False)
 
